@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
+const path = require('path')
 const rutasMascotas = require('./controllers/mascotas.routes')
 const rutasAdopciones = require('./controllers/adopcion.routes')
 const app = express()
@@ -9,6 +10,10 @@ const app = express()
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(cors())
+app.use(express.static(path.join((__dirname, '../build'))))
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '../build', 'index.html'))
+})
 
 require('../database/connectionDB')
 

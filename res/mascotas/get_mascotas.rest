@@ -1,3 +1,4 @@
-GET http://localhost:3008/api/mascotas/
+GET https://api-mascotas-production.up.railway.app/api/mascotas/
 Content-Type : application/json
+
 {}
