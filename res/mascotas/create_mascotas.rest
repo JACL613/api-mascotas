@@ -1,0 +1,11 @@
+POST http://localhost:3008/api/mascotas/
+Content-Type : application/json
+
+{
+    "nombre": "kira",
+    "raza": "Doberman",
+    "edad": 2,
+    "categoria": "Perro",
+    "stateAdopcion": false,
+    "refImg":"img_2"
+}

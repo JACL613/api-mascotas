@@ -1,0 +1,10 @@
+PUT http://localhost:3008/api/mascotas//636c7bd8389808e42db2487c
+Content-Type : application/json
+
+{
+    "nombre": "kira",
+    "raza": "Doberman",
+    "edad": 2,
+    "categoria": "Perro",
+    "stateAdopcion": true
+}

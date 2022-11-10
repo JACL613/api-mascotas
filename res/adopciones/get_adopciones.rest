@@ -1,0 +1,4 @@
+GET http://localhost:3008/api/adopciones/
+Content-Type : application/json
+
+{}

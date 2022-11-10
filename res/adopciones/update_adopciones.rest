@@ -1,0 +1,11 @@
+PUT http://localhost:3008/api/adopciones/636c8b7d789f545705fa2652
+Content-Type : application/json
+
+{   
+    "direccion": "Cra 23 # 45 - 22",
+    "documento": 152525468,
+    "telefono": 3158252487,
+  "idMascota":"636c88e9c4df1e7fe51b9122",
+  "nombreMascota":"Kira",
+  "confirm":true
+}

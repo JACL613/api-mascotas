@@ -1,0 +1,10 @@
+POST http://localhost:3008/api/adopciones/
+Content-Type : application/json
+
+{   
+    "direccion": "Cra 23 # 45 - 22",
+    "documento": 152525468,
+    "telefono": 3158252487,
+  "idMascota":"636c95cbbbd583a3a3925579",
+  "nombreMascota":"Kira"
+}

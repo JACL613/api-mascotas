@@ -1,0 +1,4 @@
+DELETE http://localhost:3008/api/adopciones/636c8b7d789f545705fa2652
+Content-Type : application/json
+
+{}
