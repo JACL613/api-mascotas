@@ -22,7 +22,7 @@ app.post('/stats', upload.single('uploaded_file'), async function (req, res) {
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(cors())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '../public')))
 
 require('../database/connectionDB')
 
