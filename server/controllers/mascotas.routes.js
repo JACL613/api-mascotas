@@ -17,16 +17,21 @@ rootMascotas.post('/', upload.single('file'), async (req, res) => {
       categoria
     }
   } = req
-  const newMascota = new Mascota({
-    nombre,
-    raza,
-    edad,
-    categoria,
-    stateAdopcion: false,
-    refImg: file.filename
-  })
-  const mascotaSave = await newMascota.save()
-  res.json(mascotaSave)
+  console.log(file)
+  if (file) {
+    const newMascota = new Mascota({
+      nombre,
+      raza,
+      edad,
+      categoria,
+      stateAdopcion: false,
+      refImg: file.filename
+    })
+    const mascotaSave = await newMascota.save()
+    res.json(mascotaSave)
+  } else {
+    res.status(404).send('bad request')
+  }
 })
 rootMascotas.put('/:id', async (req, res) => {
   const { body } = req
