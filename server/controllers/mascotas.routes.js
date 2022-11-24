@@ -1,6 +1,6 @@
 const rootMascotas = require('express').Router()
 const Mascota = require('../../database/models/mascota.models')
-
+const { upload } = require('../services/config.multer')
 rootMascotas.get('/hello', (req, res) => {
   res.send('hello Word')
 })
@@ -8,23 +8,22 @@ rootMascotas.get('/', async (req, res) => {
   const mascotas = await Mascota.find({})
   res.json(mascotas)
 })
-rootMascotas.post('/', async (req, res) => {
-  const { body } = req
+rootMascotas.post('/', upload.single('file'), async (req, res) => {
   const {
-    nombre,
-    raza,
-    edad,
-    categoria,
-    stateAdopcion,
-    refImg
-  } = body
+    file, body: {
+      nombre,
+      raza,
+      edad,
+      categoria
+    }
+  } = req
   const newMascota = new Mascota({
     nombre,
     raza,
     edad,
     categoria,
-    stateAdopcion,
-    refImg
+    stateAdopcion: false,
+    refImg: file.filename
   })
   const mascotaSave = await newMascota.save()
   res.json(mascotaSave)

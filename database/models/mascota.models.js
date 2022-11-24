@@ -6,7 +6,7 @@ const SchemaMascota = new Schema({
   edad: { type: Number, requiredd: true },
   categoria: { type: String, required: true },
   stateAdopcion: { type: Boolean, required: true },
-  refImg: { type: Number, required: true }
+  refImg: { type: String, required: true }
 })
 SchemaMascota.set('toJSON', {
   transform: (doc, returnObj) => {

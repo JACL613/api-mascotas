@@ -45,7 +45,7 @@ app.post('/profile', upload.single('file'), async function (req, res, next) {
   // res.status(208).send('hello')
   const { file, body: { name } } = req
   if (file && name) {
-    const url = `${path.join(__dirname, 'public/uploads/', file.filename)}`
+    const url = `${file.fielname}`
 
     res.status(200).send(url)
   } else {
